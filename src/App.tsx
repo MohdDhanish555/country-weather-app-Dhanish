@@ -36,10 +36,18 @@ function App() {
     setSearchText( event.target.value )
   }
 
+  function handleErrors(response : any) {
+    if (!response.ok) {
+        throw alert("Please Enter a valid Country name")
+    }
+    return response.json();
+}
+
   function fetchCountryData() {
     fetch(countryURL)
-    .then(response => response.json())
-    .then(response => setCountryData(response));
+    .then(handleErrors)
+    .then(response => setCountryData(response))
+    .catch(() => navigate("/")); 
   }
 
   function handleSubmit(event : any) {
