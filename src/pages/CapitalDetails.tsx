@@ -1,7 +1,7 @@
 import Header from "../components/Header"
 import "../assets/css/Details.css"
 
-const CapitalDetails = ({data }  :any) => (
+const CapitalDetails = ({data }  : any) => (
     <div>
         <Header />
         <h1 className="capital-name">{data?.location?.name}</h1>

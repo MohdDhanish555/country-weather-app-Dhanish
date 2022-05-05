@@ -2,8 +2,9 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { validate } from '../assets/validate';
 import "../assets/css/Form.css"
+import { FormType } from '../types/types';
 
-const Form = ({onSubmit , onChange , value }: any) => (
+const Form = ({onSubmit , onChange , value }: FormType) => (
   <div className='form-flex'>
     <form onSubmit={onSubmit} action="/pages/CountryDetails" className='form-container'>
        

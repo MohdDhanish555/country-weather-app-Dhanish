@@ -32,7 +32,7 @@ function App() {
 
   // FETCHING & HANDLING COUNTRY DETAILS 
 
-  function handleChange( event : any) {
+  function handleChange( event : React.ChangeEvent<HTMLInputElement>) {
     setSearchText( event.target.value )
   }
 
@@ -50,7 +50,7 @@ function App() {
     .catch(() => navigate("/")); 
   }
 
-  function handleSubmit(event : any) {
+  function handleSubmit(event : React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     fetchCountryData();
     navigate("/CountryDetails")
@@ -58,7 +58,7 @@ function App() {
 
   // FETCHING CAPITAL DETAILS
 
-  function handleClick(capital : any ) {
+  function handleClick(capital : any) {
     setCapitalURL(capital_API + capital)
     navigate("/CapitalDetails")
   }

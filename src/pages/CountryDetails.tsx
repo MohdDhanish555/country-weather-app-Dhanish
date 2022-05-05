@@ -1,8 +1,9 @@
 import "../assets/css/Details.css"
 import Button from '@mui/material/Button';
 import Header from "../components/Header"
+import { CountryDetailsType } from "../types/types";
 
-const CountryDetails = ({data , onClick } : any) => (
+const CountryDetails = ({data , onClick } : CountryDetailsType) => (
   <div>
     <Header />
       {
@@ -11,7 +12,7 @@ const CountryDetails = ({data , onClick } : any) => (
             <div className="card1">
               <h1>{name.common}</h1>
               <img src={flags.png} alt="flag" width="250px"/>
-              <Button variant="contained" onClick={() => onClick(capital)}>capital</Button>
+              <Button variant="contained" onClick={() => onClick(capital)}>{capital}</Button>
             </div>
             <div className="card2">
               <h2>Population</h2>
